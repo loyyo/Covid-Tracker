@@ -1,0 +1,1018 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: all 0.5s ease;
+}
+.header,
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header {
+	padding-bottom: 0.8rem;
+	margin-bottom: -0.5rem;
+}
+
+.dark-mode {
+	background-color: rgba(20, 20, 20, 0.25);
+	color: white;
+}
+
+.App {
+	background-color: rgb(231, 231, 231);
+}
+
+// .header {
+// 	background-color: black;
+// }
+
+// Chart - Pie
+
+.data-pie-daily,
+.data-chart-all {
+	display: flex;
+	justify-content: center;
+	min-width: 65vw;
+}
+
+// Data Cards
+
+.global-data-card,
+.country-data-card {
+	padding-bottom: 1rem;
+}
+
+.all-cases,
+.today-cases {
+	min-width: 35vw;
+	padding-right: 2rem;
+}
+
+.all-cases-card,
+.today-cases-card {
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+.cases {
+	position: flex;
+	flex-direction: row;
+}
+
+.text {
+	text-align: center;
+	display: inline-block;
+	width: 50%;
+}
+
+.count-up {
+	text-align: center;
+	display: inline-block;
+	width: 50%;
+}
+
+// Country Search
+
+.chart {
+	margin-top: -3rem;
+}
+
+.countries-buttons {
+	margin-left: -0.1rem;
+}
+
+.countries-select {
+	display: inline-block;
+	margin-left: 0.75rem;
+	margin-right: 4rem;
+}
+
+.global-data-card,
+.country-data-card {
+	margin-bottom: 5rem;
+}
+
+.country-visualization,
+.global-visualization {
+	margin-bottom: 2rem;
+}
+
+.data {
+	display: inline-block;
+}
+
+.search-bar-country {
+	width: 90%;
+}
+
+.sb-country {
+	margin-bottom: 0.25rem;
+	margin-left: 0.5rem;
+}
+
+.countries-list {
+	overflow-y: scroll;
+	height: 66vh;
+	width: 18vw;
+}
+
+@media only screen and (max-device-width: 800px) {
+	.chart {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 4rem 2rem 0 0;
+		.all-cases-card {
+			width: 88%;
+			margin-bottom: 1rem;
+		}
+		.today-cases {
+			width: 100%;
+		}
+		.data-chart-all {
+			width: 80%;
+		}
+	}
+}
+@media only screen and (max-device-width: 500px) {
+	.chart {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.countries-select {
+			width: 100%;
+		}
+		.data {
+			padding: 0 0 0 0rem;
+		}
+		.all-cases-card {
+			width: 100%;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.countries-list::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(126, 118, 118, 0.9);
+	border-radius: 10px;
+	background-color: rgb(190, 190, 190);
+}
+
+.countries-list::-webkit-scrollbar {
+	width: 12px;
+	background-color: #f5f5f5;
+}
+
+.countries-list::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #e94a4a;
+	background-image: -webkit-linear-gradient(
+		90deg,
+		transparent,
+		rgba(0, 0, 0, 0.4) 50%,
+		transparent,
+		transparent
+	);
+}
+
+.country-name {
+	font-size: 92.5%;
+	padding-left: 0.5rem;
+}
+
+.country-flag {
+	margin-right: 0.5rem;
+	width: 2.5vh;
+}
+
+.countries-buttons {
+	min-width: 10vh;
+	margin-bottom: 0.5rem;
+}
+
+//Globe
+.worldInfo {
+	color: black;
+	background-color: rgba(245, 245, 245, 0.8);
+	padding: 10px;
+	border-radius: 7%;
+	font-size: 1.2em;
+	border: solid 1px black;
+	top: 2.5vh;
+	left: 2rem;
+	z-index: 5;
+	position: fixed;
+	box-shadow: -3px 3px 20px rgba(151, 120, 116, 0.8);
+}
+
+@media only screen and (max-device-width: 800px) {
+	.worldInfo {
+		visibility: hidden;
+	}
+	.worldInfo {
+		color: black;
+		background-color: rgba(245, 245, 245, 0.8);
+		padding: 10px;
+		border-radius: 7%;
+		font-size: 1.2em;
+		border: solid 1px black;
+		top: 2.5vh;
+		left: 2rem;
+		z-index: 5;
+		position: fixed;
+		box-shadow: -3px 3px 20px rgba(151, 120, 116, 0.8);
+	}
+}
+
+.countryInfo {
+	color: black;
+	background-color: rgba(245, 245, 245, 0.8);
+	padding: 10px;
+	border-radius: 7%;
+	font-size: 1.2em;
+	border: solid 1px black;
+}
+
+// Burger
+/* Position and sizing of burger button */
+.bm-burger-button {
+	position: fixed;
+	width: 36px;
+	height: 30px;
+	right: 1vw;
+	top: 2.5vh;
+}
+@media only screen and (max-device-width: 800px) {
+	.bm-burger-button {
+		right: 2vw;
+	}
+}
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+	background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+	background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+	height: 24px;
+	width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+	background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+	position: fixed;
+	height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+	background: #373a47;
+	padding: 2.5em 1.5em 0;
+	font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+	fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+	color: #b8b7ad;
+	padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+	display: inline-block;
+	padding: 10px 20px;
+	margin-top: 10px;
+	text-align: justify;
+	color: #b8b7ad;
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 2px;
+	transition: background-position-x 0.9s ease;
+}
+.bm-item .menu-icon {
+	margin-right: 7px;
+}
+.bm-item:hover {
+	text-decoration: none;
+	color: #c94e50;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+	background: rgba(0, 0, 0, 0.3);
+}
+// NEWS
+.news {
+	margin: 15px;
+}
+.twitter-timeline {
+	display: inline-block;
+	width: 100%;
+}
+.niusy {
+	display: inline-block;
+	width: 20%;
+}
+.wszystkie-niusy {
+	padding: 2em;
+}
+
+@media only screen and (max-device-width: 1050px) {
+	.niusy {
+		width: 25%;
+	}
+}
+
+@media only screen and (max-device-width: 800px) {
+	.niusy {
+		width: 33%;
+	}
+}
+
+@media only screen and (max-device-width: 700px) {
+	.niusy {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-device-width: 600px) {
+	.niusy {
+		width: 100%;
+	}
+}
+//Banner
+.banner {
+	color: white;
+	background-color: rgb(214, 32, 32);
+	font-weight: bolder;
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	padding: 1.5vh 0;
+}
+
+.banner-div {
+	margin-top: 1rem;
+	margin-bottom: 10rem;
+	text-align: center;
+}
+
+@media only screen and (max-device-width: 800px) {
+	.banner {
+		color: white;
+		background-color: rgb(214, 32, 32);
+		font-weight: bolder;
+		font-size: 1.2rem;
+		padding: 1.5vh 0;
+	}
+
+	.banner-div {
+		margin-top: 0.3rem;
+		margin-bottom: 4rem;
+	}
+}
+
+// Symptoms
+
+.symptoms {
+	margin: 0 20vw;
+	background-color: rgb(231, 231, 231);
+
+	.much-common,
+	.less-common,
+	.emergency {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.sympton-btn {
+		margin: 0.5rem;
+	}
+
+	.face {
+		font-weight: bold;
+		font-size: 4rem;
+		padding: 2rem 5rem;
+		display: flex;
+		.face-img {
+			width: 30%;
+			display: inline-block;
+		}
+		.face-info {
+			width: 70%;
+			display: inline-block;
+		}
+
+		.green-face {
+			color: rgb(16, 161, 16);
+			font-size: 3rem;
+			.face-info {
+				padding-left: 6rem;
+			}
+		}
+
+		.orange-face {
+			color: orange;
+			font-size: 1.4rem;
+		}
+
+		.red-face {
+			color: red;
+			font-size: 1.4rem;
+		}
+
+		.yellow-face {
+			color: rgba(204, 204, 2, 0.8);
+			font-size: 1.4rem;
+			.face-info {
+				padding-left: 6rem;
+			}
+		}
+	}
+
+	hr {
+		border: solid 0.5px rgb(214, 32, 32);
+		border-radius: 5rem;
+		opacity: 20%;
+	}
+	.about-covid {
+		.covid-question {
+			font-weight: bolder;
+			margin: 1.7rem 0;
+		}
+		strong {
+			p {
+				font-size: 1.2rem;
+			}
+		}
+		p {
+			font-size: 1.1rem;
+		}
+	}
+	.true-or-false {
+		background-color: rgb(231, 231, 231);
+	}
+
+	.true-or-false-question {
+		font-size: 2.5rem;
+		margin: 1.2rem 0 2rem;
+	}
+	.true-or-false-p {
+		font-size: 1.3rem;
+	}
+	.true-or-false-details {
+		display: flex;
+		margin: 2.4rem 0;
+		padding: 0 3rem;
+		flex-direction: column;
+		.true-or-false-false {
+			color: rgb(214, 32, 32);
+			font-size: 1.3rem;
+			font-weight: bolder;
+			display: block;
+		}
+		.true-or-false-true {
+			color: green;
+			font-size: 1.3rem;
+			font-weight: bolder;
+			display: block;
+		}
+		.true-or-false-text {
+			font-size: 1.1rem;
+			margin-top: 2rem;
+			display: block;
+		}
+	}
+}
+
+@media only screen and (max-device-width: 600px) {
+	.symptoms {
+		margin: 0;
+		padding: 0 2vh;
+		background-color: rgb(231, 231, 231);
+		font-size: 1rem;
+
+		.much-common,
+		.less-common,
+		.emergency {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.sympton-btn {
+			margin: 0.2rem;
+			width: 31%;
+			button {
+				padding: 0;
+				min-width: 100%;
+				min-height: 5vh;
+				div {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 0.2rem;
+					min-height: 12vh;
+					min-width: 100%;
+					border-radius: 1.3rem;
+				}
+			}
+		}
+		h1 {
+			font-size: 2rem;
+		}
+
+		.face {
+			font-weight: bold;
+			padding: 0;
+			margin-top: 1rem;
+			display: inline-block;
+			align-items: center;
+			.face-img {
+				display: inline-block;
+				width: 30%;
+				height: 100%;
+
+				img {
+					width: 90%;
+				}
+			}
+
+			.green-face {
+				color: rgb(16, 161, 16);
+				font-size: 3rem;
+				.face-info {
+					padding-left: 0rem;
+				}
+			}
+
+			.orange-face {
+				font-size: 1rem;
+				.face-img {
+					position: relative;
+					top: -30px;
+				}
+			}
+
+			.red-face {
+				font-size: 1rem;
+				.face-img {
+					position: relative;
+					top: -50px;
+				}
+			}
+
+			.yellow-face {
+				font-size: 1rem;
+				.face-img {
+					position: relative;
+					top: -10px;
+				}
+				.face-info {
+					padding-left: 0rem;
+				}
+			}
+			.face-info {
+				width: 70%;
+				font-size: 1rem;
+				display: inline-block;
+				height: 100%;
+			}
+		}
+
+		hr {
+			border: solid 0.5px rgb(214, 32, 32);
+			border-radius: 5rem;
+			opacity: 20%;
+		}
+		.about-covid {
+			.covid-question {
+				font-weight: bolder;
+				margin: 1.7rem 0;
+			}
+			strong {
+				p {
+					font-size: 1.2rem;
+				}
+			}
+			p {
+				font-size: 1.1rem;
+			}
+		}
+		.true-or-false {
+			background-color: rgb(231, 231, 231);
+		}
+
+		.true-or-false-question {
+			font-size: 2.5rem;
+			margin: 1.2rem 0 2rem;
+		}
+		.true-or-false-p {
+			font-size: 1.3rem;
+		}
+		.true-or-false-details {
+			margin: 2.4rem 0;
+			padding: 0 3rem;
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			.true-or-false-false {
+				color: rgb(214, 32, 32);
+				font-size: 1.3rem;
+				font-weight: bolder;
+				width: 100%;
+			}
+			.true-or-false-true {
+				color: green;
+				font-size: 1.3rem;
+				font-weight: bolder;
+				width: 100%;
+			}
+			.true-or-false-text {
+				font-size: 1.1rem;
+				margin-top: 2rem;
+				width: 100%;
+			}
+		}
+	}
+}
+
+//Footer
+.footer {
+	padding: 2rem 0;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background-color: rgb(214, 32, 32);
+	color: white;
+}
+@media only screen and (max-device-width: 800px) {
+	.footer {
+		padding: 1.5vh 0;
+	}
+}
+
+// Sources
+.sourcess {
+	margin-top: 10rem;
+	padding-bottom: 5rem;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	color: black;
+}
+
+.twitter-timeline-accordion {
+	width: 30vw;
+	margin-left: 1.5rem;
+	display: inline-table;
+}
+
+@media only screen and (max-width: 768px) {
+	.twitter-timeline-accordion {
+		margin-top: 1vh;
+		width: 80vw;
+		margin-left: 5vw;
+		margin-right: 5vw;
+
+		.yellow-face {
+			color: rgba(204, 204, 2, 0.8);
+			font-size: 1.4rem;
+			.face-info {
+				padding-left: 6rem;
+			}
+		}
+	}
+
+	hr {
+		border: solid 0.5px rgb(214, 32, 32);
+		border-radius: 5rem;
+		opacity: 20%;
+	}
+	.about-covid {
+		.covid-question {
+			font-weight: bolder;
+			margin: 1.7rem 0;
+		}
+		strong {
+			p {
+				font-size: 1.2rem;
+			}
+		}
+		p {
+			font-size: 1.1rem;
+		}
+	}
+	.true-or-false {
+		background-color: rgb(231, 231, 231);
+	}
+
+	.true-or-false-question {
+		font-size: 2.5rem;
+		margin: 1.2rem 0 2rem;
+	}
+	.true-or-false-p {
+		font-size: 1.3rem;
+	}
+	.true-or-false-details {
+		display: flex;
+		margin: 2.4rem 0;
+		padding: 0 3rem;
+		flex-direction: column;
+		.true-or-false-false {
+			color: rgb(214, 32, 32);
+			font-size: 1.3rem;
+			font-weight: bolder;
+			display: block;
+		}
+		.true-or-false-true {
+			color: green;
+			font-size: 1.3rem;
+			font-weight: bolder;
+			display: block;
+		}
+		.true-or-false-text {
+			font-size: 1.1rem;
+			margin-top: 2rem;
+			display: block;
+		}
+	}
+}
+@media only screen and (max-device-width: 1024px) {
+	.face {
+		font-weight: bold;
+		padding: 0;
+		margin-top: 1rem;
+		display: inline-block;
+		align-items: center;
+		.face-img {
+			display: inline-block;
+			width: 30%;
+
+			img {
+				width: 90%;
+			}
+		}
+
+		.green-face {
+			color: rgb(16, 161, 16);
+			font-size: 3rem;
+			.face-info {
+				padding-left: 0rem;
+			}
+		}
+
+		.orange-face {
+			font-size: 1rem;
+			.face-img {
+				position: relative;
+				top: -30px;
+			}
+		}
+
+		.red-face {
+			font-size: 1rem;
+			.face-img {
+				position: relative;
+				top: -50px;
+			}
+		}
+
+		.yellow-face {
+			font-size: 1rem;
+			.face-img {
+				position: relative;
+				top: -10px;
+			}
+			.face-info {
+				padding-left: 0rem;
+			}
+		}
+		.face-info {
+			width: 70%;
+			font-size: 1rem;
+			display: inline-block;
+			height: 100%;
+		}
+	}
+}
+@media only screen and (max-device-width: 600px) {
+	.symptoms {
+		margin: 0;
+		padding: 0 2vh;
+		background-color: rgb(231, 231, 231);
+		font-size: 1rem;
+
+		.much-common,
+		.less-common,
+		.emergency {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.sympton-btn {
+			margin: 0.2rem;
+			width: 31%;
+			button {
+				padding: 0;
+				min-width: 100%;
+				min-height: 5vh;
+				div {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 0.2rem;
+					min-height: 12vh;
+					min-width: 100%;
+					border-radius: 1.3rem;
+				}
+				div:active {
+					border: 0;
+				}
+			}
+		}
+		h1 {
+			font-size: 2rem;
+		}
+
+		.face {
+			font-weight: bold;
+			padding: 0;
+			margin-top: 1rem;
+			display: inline-block;
+			align-items: center;
+			.face-img {
+				display: inline-block;
+				width: 30%;
+				height: 100%;
+
+				img {
+					width: 90%;
+				}
+			}
+
+			.green-face {
+				color: rgb(16, 161, 16);
+				font-size: 3rem;
+				.face-info {
+					padding-left: 0rem;
+				}
+			}
+
+			.orange-face {
+				font-size: 1rem;
+				.face-img {
+					position: relative;
+					top: -30px;
+				}
+			}
+
+			.red-face {
+				font-size: 1rem;
+				.face-img {
+					position: relative;
+					top: -50px;
+				}
+			}
+
+			.yellow-face {
+				font-size: 1rem;
+				.face-img {
+					position: relative;
+					top: -10px;
+				}
+				.face-info {
+					padding-left: 0rem;
+				}
+			}
+			.face-info {
+				width: 70%;
+				font-size: 1rem;
+				display: inline-block;
+				height: 100%;
+			}
+		}
+
+		hr {
+			border: solid 0.5px rgb(214, 32, 32);
+			border-radius: 5rem;
+			opacity: 20%;
+		}
+		.about-covid {
+			.covid-question {
+				font-weight: bolder;
+				margin: 1.7rem 0;
+			}
+			strong {
+				p {
+					font-size: 1.2rem;
+				}
+			}
+			p {
+				font-size: 1.1rem;
+			}
+		}
+		.true-or-false {
+			background-color: rgb(231, 231, 231);
+		}
+
+		.true-or-false-question {
+			font-size: 2.5rem;
+			margin: 1.2rem 0 2rem;
+		}
+		.true-or-false-p {
+			font-size: 1.3rem;
+		}
+		.true-or-false-details {
+			margin: 2.4rem 0;
+			padding: 0 3rem;
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			.true-or-false-false {
+				color: rgb(214, 32, 32);
+				font-size: 1.3rem;
+				font-weight: bolder;
+				width: 100%;
+			}
+			.true-or-false-true {
+				color: green;
+				font-size: 1.3rem;
+				font-weight: bolder;
+				width: 100%;
+			}
+			.true-or-false-text {
+				font-size: 1.1rem;
+				margin-top: 2rem;
+				width: 100%;
+			}
+		}
+	}
+}
+//Footer
+.footer {
+	padding: 2rem 0;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background-color: rgb(214, 32, 32);
+	color: white;
+}
+@media only screen and (max-device-width: 800px) {
+	.footer {
+		padding: 1.5vh 0;
+	}
+}
+
+// Sources
+.sourcess {
+	margin-top: 10rem;
+	padding-bottom: 5rem;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	color: black;
+}
+
+.twitter-timeline-accordion {
+	width: 30vw;
+	margin-left: 1.5rem;
+	display: inline-table;
+}
+
+@media only screen and (max-width: 768px) {
+	.twitter-timeline-accordion {
+		margin-top: 1vh;
+		width: 80vw;
+		margin-left: 5vw;
+		margin-right: 5vw;
+	}
+}
